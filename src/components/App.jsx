@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-// import { fetchImages } from 'utils/fetchImages';
+import { fetchImages } from 'utils/fetchImages';
 
 import { Searchbar } from './Searchbar/Searchbar';
 // import { Loader } from './Loader/Loader';
@@ -8,7 +8,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 // import { Button } from './Button/Button';
 // import { Modal } from './Modal/Modal';
 
-// fetchImages();
+fetchImages();
 export class App extends Component {
   state = {
     page: 1,
