@@ -7,19 +7,25 @@ export class Searchbar extends Component {
 
   handlerInput = e => {
     this.setState({ keyword: e.target.value });
- console.log(e)
   };
 
+  sendedKeyword = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state.keyword);
+    this.setState({ keyword: '' });
+  };
 
   render() {
     return (
       <header>
-        <form>
+        <form onSubmit={this.sendedKeyword}>
           <button type="submit">
             <span>Search</span>
           </button>
 
           <input
+          value={this.state.keyword}
+          onChange={this.handlerInput}
             type="text"
             // autocomplete="off"
             // autofocus
